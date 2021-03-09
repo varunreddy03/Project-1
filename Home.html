@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>Home</title>
+  
+
   <style>
     .header{
       padding-top: 20%;
@@ -18,7 +20,7 @@
     }
     .in{
       display: inline;
-      padding-left: 40%;
+      padding-left: 30%;
     }
     .in1{
       display: inline;
@@ -38,19 +40,28 @@
     .sign{
       padding-top: 15%;
     }
+    .bt{
+      padding-left: 40vw;
+    }
   </style>
 </head>
 <body>
   <div class="header">
+    <p id="demo" ></p>
+    
 
   </div>
-  <div class="body">
+  <div class="body">    
     <div class="h4">Report No:CVR/CED/CC/MT-5/HPC/2021-()
-      <div class="in">Date:()</div><br>
+        <p class="in">  
+            Date: <span class="currDate"></span> 
+        </p> 
+        <br>
       <b>M/s. Haris Pranava Constructions Pvt. Ltd.,</b><br>
       Affluence Villas, Manneguda,<br>
       Hyderabad.
     </div>
+    
     <h2 class="text-center"><u>TEST REPORT ON CEMENT</u></h2><br>
     <div class="h4">
       <table class="table-borderless">
@@ -98,7 +109,12 @@
           <td class="text-center">()</td>
           <td class="text-center">(Value)</td>
         </tr>
-      </table><br><br>
+      </table><br>
+      <div class="bt">
+        <button class="btn btn-primary" onclick="window.print()">Print this page</button>
+      </div>
+      
+      <br>
       <div class="note">
         Note:
         &emsp;1. The results relate only to samples supplied and tested in the college laboratory.<br>
@@ -113,12 +129,23 @@
       &emsp;Mr. ()
       <div class="in2">Head of the Department<br>
       Principal Investigator
-      
+
       &emsp;&emsp;<div class="in1">Civil Engineering</div></div>
     </div>
   </div>
+  
   <div class="footer">
-    
+      
+
   </div>
+  <script>
+    
+    let currDate = new Date().toLocaleDateString('en-GB');      
+            let inputDate = new Date(); 
+            document.querySelector('.currDate').textContent 
+                    = currDate;          
+            document.querySelector('#dateInput').valueAsDate 
+                    = inputDate; 
+    </script>
 </body>
 </html>
